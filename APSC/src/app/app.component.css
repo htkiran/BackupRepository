@@ -1,0 +1,48 @@
+.page-break {
+    page-break-after: always;
+    /* page-break-inside: always;
+    page-break-before: always; */
+}
+
+td {
+    border-color: black;
+}
+
+
+
+.fontSizeClass>* {
+    font-size: 10px;
+}
+
+.pageBreakCondition {
+    page-break-before: always;
+}
+
+.check-list-pdf {
+    display: block;
+    width: 100%;
+    padding: 16px;
+}
+
+.check-list-pdf__test-container {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.check-list-pdf__test-item {
+    clear: both;
+    display: block;
+    width: 100%;
+    height: 80px;
+    padding: 16px;
+    border: 2px dashed green;
+    margin-bottom: 16px;
+    color: green;
+}
+
+.check-list-pdf__test-item.test-item--page-break {
+    border: 2px dashed red;
+    margin-bottom: 16px;
+    color: red;
+}

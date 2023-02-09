@@ -1,0 +1,2352 @@
+<div class="panel panel-default">
+  <div class="panel-heading"></div>
+  <div id="modalPanel" class="panel-body">
+    <div class="col-md-12 text-right">
+      <button type="submit" (click)="whendownloadbuttonclickfrompopup()" class="btn btn-primary mb-3 ml-1">
+        Download Application Form
+      </button>
+    </div>
+
+    <div [ngClass]="{'fontSizeClass' : condition}" id="pdfTable" #pdfTable class="col-md-12">
+      <div id="directAckDetailSection" style="
+                    background: #fff !important;
+                    font-family: 'Raleway', sans-serif;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 1.25;
+                    color: #3a3a3a;
+                  ">
+        <div class="col-md-12" style="
+                      font-family: 'Raleway', sans-serif;
+                      font-weight: 500;
+                      
+                      line-height: 1.8;
+                      color: #3a3a3a;
+                      padding: 10px;
+                    ">
+          <div class="col-md-12" style="border: 5px solid #666;padding: 8px">
+            <div style="border: 2px solid #666;">
+              <div class="row" style="margin: 0">
+                <div class="col-md-12" style="text-align: center !important; margin-top: 0px">
+                  <div style="border-bottom: 1px solid #999">
+                    <div class="no-border">
+                      <div class="row">
+                        <div class="col-md-2">
+                          <tr *ngIf="this.finaldata.applypostfinaldata.rollno != null">
+                            <td>
+                              <b>Roll No : &nbsp;&nbsp; </b>
+                            </td>
+                            <td>
+                              <b> {{ this.finaldata.applypostfinaldata.rollno }}</b>
+                            </td>
+                          </tr>
+                        </div>
+                        <div class="col-md-6" style="padding-left: 25px;">
+                          <div style="width: 100%; text-align: right; padding-right: 40px ;">
+                            <img src="assets/AssamLogo.png" alt="APSC" style="height: 55px" />
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <tr [ngClass]="{'fontSizeClass' : condition}">
+                            <td>
+                              <b>Application ID :- </b>
+                            </td>
+                            <td>
+                              <b> {{ this.finaldata.applypostfinaldata.applicationid}}</b>
+                            </td>
+                          </tr>
+                          <tr [ngClass]="{'fontSizeClass' : condition}">
+                            <td>
+                              <b>Submission Date:-</b>
+                            </td>
+                            <td>
+                              <b>
+                                {{
+                                finaldata.applypost.personaldetails.submitteddate.split('-').reverse().join('-').trimStart().trimEnd().trim()
+                                }}</b>
+                            </td>
+                          </tr>
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </div>
+
+                  <b>
+                    <h6 style="
+                                margin-top: 0px;
+                                color: black;                            
+                              ">
+                      <strong> {{ finaldata.applypost.personaldetails.postname}} </strong>
+                    </h6>
+                  </b>
+                  <b>
+                    <h6 style="
+                  margin-top: 10px;
+                  color: black;
+                         
+                ">
+                      <strong> {{ finaldata.applypost.personaldetails.advtno}}</strong>
+                    </h6>
+                  </b>
+                </div>
+
+                <!-- Applicant Details-->
+                <div class="col-md-12">
+                  <div class="">
+                    <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                      <tbody>
+                        <tr style="background-color: #0069c4; color: #fff">
+                          <td colspan="2" style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                            <strong>Applicant Basic Details</strong>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+
+                          <td style="
+                                       width: 85%;
+                          padding: 0;
+                          border: 1px solid black;
+                          text-align: left;
+                          margin: 0;
+                                       
+                                      ">
+                            <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                              <tbody style="width: 100%; height: 100%; padding: 0; margin: 0;">
+                                <tr>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <strong>Applicant Name</strong>
+                                  </td>
+                                  <td colspan="3" style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <b> {{ finaldata.personaldetails.full_name}} </b>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <strong>Mother's Name</strong>
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <b>{{ finaldata.personaldetails.mothers_name}} </b>
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <strong>Father's Name</strong>
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <b> {{ finaldata.personaldetails.fathers_name}} </b>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <strong>Date of Birth</strong>
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <b> {{ finaldata.personaldetails.d_o_b.split('-').reverse().join('-')}}</b>
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <strong>Age as on
+                                      (01/01/2022)</strong>
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+
+                                    {{ finaldata.applypost.personaldetails.age }}
+
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <strong>Gender</strong>
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    {{ finaldata.personaldetails.gender}}
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <strong>Caste/Category</strong>
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <b> {{ finaldata.personaldetails.caste}}</b>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <strong>Nationality</strong>
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    {{ finaldata.personaldetails.nationality}}
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <strong>Email Id</strong>
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    {{ finaldata.personaldetails.email}}
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <strong>Mobile Number</strong>
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    {{ finaldata.personaldetails.mobile}}
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <strong>Alt.Mobile No</strong>
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    {{
+                                    finaldata.personaldetails.alternative_Mobie_number}}
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td style="
+                                  border: 1px solid black;
+                                  padding: 0.4rem 0.75rem;
+                                  
+                                ">
+                                    <b>PWBD Category</b>
+                                  </td>
+                                  <td colspan="3" style="
+                                  border: 1px solid black;
+                                  padding: 0.4rem 0.75rem;
+                                  
+                                " *ngIf="finaldata.personaldetails.special_category_sub_category!==null ; else elseforPWBD">
+                                    <b> {{
+                                      finaldata.personaldetails.special_category}} </b>
+                                  </td>
+                                  <ng-template #elseforPWBD>
+                                    <td>
+                                      <b> NA </b>
+                                    </td>
+                                  </ng-template>
+                                </tr>
+
+
+                                <tr>
+
+                                  <td style="
+                                  border: 1px solid black;
+                                  padding: 0.4rem 0.75rem;
+                                  
+                                ">
+                                    <b>PWBD SubCategory</b>
+                                  </td>
+                                  <td colspan="3" style="
+                                  border: 1px solid black;
+                                  padding: 0.4rem 0.75rem;
+                                  
+                                " *ngIf="finaldata.personaldetails.special_category_sub_category!==null ; else elseforSubPWBD">
+                                    <b> {{ finaldata.personaldetails.special_category_sub_category + ','+
+                                      finaldata.personaldetails.degree_of_dis + '%'}} </b>
+                                  </td>
+                                  <ng-template #elseforSubPWBD>
+                                    <td>
+                                      <b> NA </b>
+                                    </td>
+                                  </ng-template>
+                                </tr>
+
+
+
+
+                                <tr *ngIf="finaldata.applypost.personaldetails.cardeposition!=null">
+                                  <td *ngIf="finaldata.applypost.personaldetails.cardeposition!=null" style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <strong>Cadre</strong>
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    {{ finaldata.applypost.personaldetails.cardeposition }}
+                                  </td>
+                                  <td *ngIf="finaldata.applypost.personaldetails.currentposition!=null" style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    <strong>Current Position</strong>
+                                  </td>
+                                  <td style="
+                                                border: 1px solid black;
+                                                padding: 0.4rem 0.75rem;
+                                                
+                                              ">
+                                    {{
+                                    finaldata.applypost.personaldetails.currentposition}}
+                                  </td>
+                                </tr>
+
+                              </tbody>
+                            </table>
+                          </td>
+                          <td style="
+                          width: 15%;
+                          padding: 0;
+                          border: 1px solid black;
+                          text-align: center;
+                        ">
+                            <div style="border: 1px solid #ccc; padding: 5px">
+                              <img style="max-width: 100%" src="{{ profileimage }}" alt="Applicant Photo" />
+                            </div>
+                            <div style="border: 1px solid #ccc; padding: 5px">
+                              <img style="max-width: 100%" src="{{ signatureimage }}" alt="Applicant Signature" />
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Persent Address Details-->
+                <div class="col-md-12" style="margin-top: 5px">
+                  <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                    <tbody>
+                      <tr [ngClass]="{'fontSizeClass' : condition}">
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        background-color: #0069c4;
+                                        color: #fff;
+                                        
+                                      " colspan="2" width="50%" class="header-title bg-green">
+                          <b> Present Address </b>
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        background-color: #0069c4;
+                                        color: #fff;
+                                        
+                                      " colspan="2" width="50%" class="header-title bg-green">
+                          <b> Permanent Address </b>
+                        </td>
+                      </tr>
+                      <tr [ngClass]="{'fontSizeClass' : condition}">
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          <b>Address</b>
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          {{ finaldata.applypost.personaldetails.presentaddress}}
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          <b>Address</b>
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          {{finaldata.personaldetails.permanent_address }}
+                        </td>
+                      </tr>
+                      <tr [ngClass]="{'fontSizeClass' : condition}">
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          <b>District</b>
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          {{ finaldata.applypost.personaldetails.district}}
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          <b>District</b>
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          {{ finaldata.personaldetails.district}}
+                        </td>
+                      </tr>
+                      <tr [ngClass]="{'fontSizeClass' : condition}">
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          <b>State</b>
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          {{ finaldata.applypost.personaldetails.state}}
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          <b>State</b>
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          {{ finaldata.personaldetails.state}}
+                        </td>
+                      </tr>
+                      <tr [ngClass]="{'fontSizeClass' : condition}">
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          <b>Country</b>
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          India
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          <b>Country</b>
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          India
+                        </td>
+                      </tr>
+                      <tr [ngClass]="{'fontSizeClass' : condition}">
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          <b>Pincode</b>
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          {{ finaldata.applypost.personaldetails.pincode }}
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          <b>Pincode</b>
+                        </td>
+                        <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                          {{ finaldata.personaldetails.pincode }}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!--Education  Details for Post-->
+                <div style="width: 100%;">
+                  <div style="margin-top: 20px;">
+                  </div>
+                  <div *ngIf=" finaldata.applypost.educationqualification.length!=0" class="col-md-12"
+                    style="margin-top: 15px;width: 100%;page-break-inside: avoid;">
+                    <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                      <tbody>
+                        <tr [ngClass]="{'fontSizeClass' : condition}" style="page-break-inside:avoid;">
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.75rem;
+                                    background-color: #0069c4;
+                                    color: #fff;
+                                    
+                                  " colspan="9" class="header-title bg-green">
+                            <strong>Educational Qualification(s) Prescribed for the Post</strong>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.75rem;
+                                    
+                                  ">
+                            <b>Degree/Course</b>
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.75rem;
+                        
+                      ">
+                            <b>Division /Grade /Class</b>
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.75rem;
+                        
+                      ">
+                            <b>CGPA/ %</b>
+                          </td>
+                          <td style="
+            border: 1px solid black;
+            padding: 0.4rem 0.75rem;
+            
+          ">
+                            <b>Duration</b>
+                          </td>
+
+                          <td style="
+border: 1px solid black;
+padding: 0.4rem 0.75rem;
+
+">
+                            <b>Year of Passing</b>
+                          </td>
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.75rem;
+                                    
+                                    width : 100px">
+                            <b>Subject(s)</b>
+                          </td>
+
+
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.75rem;
+                                    
+                                  ">
+                            <b>Name of School/ College</b>
+                          </td>
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.75rem;
+                                    
+                                  ">
+                            <b>Name of Board/ University</b>
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.75rem;
+                        
+                      ">
+                            <b>Pass Certificate</b>
+                          </td>
+
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}"
+                          *ngFor="let items of finaldata.applypost.educationqualification">
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.3rem;
+                                    
+                                  ">
+                            {{ items.degree}}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ items.division}}
+                          </td>
+                          <td style="
+            border: 1px solid black;
+            padding: 0.4rem 0.3rem;
+            
+          ">
+                            {{ items.percentage}}
+                          </td>
+                          <td style="
+border: 1px solid black;
+padding: 0.4rem 0.3rem;
+
+">
+                            {{ items.duration}}
+                          </td>
+
+                          <td style="
+border: 1px solid black;
+padding: 0.4rem 0.3rem;
+
+">
+                            {{ items.yop}}
+                          </td>
+
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.3rem;
+                                    
+                                  ">
+                            {{ items.subject}}
+                          </td>
+
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.3rem;
+                                    
+                                  ">
+                            {{ items.nameofschool}}
+                          </td>
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.3rem;
+                                    
+                                  ">
+                            {{ items.nameofboard}}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            Uploaded
+                          </td>
+
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!--OTR Education-->
+                <!--Schooling-->
+
+                <div style="width: 100%;">
+                  <div style="margin-top: 20px;">
+                  </div>
+                  <div class="col-md-12" style="margin-top: 15px; width: 100%; page-break-inside: avoid;">
+                    <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                      <tbody>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              background-color: #0069c4;
+                              color: #fff;
+                              
+                            " colspan="8">
+                            <strong>Educational Qualification(s) Registered during the OTR (One Time Registration)
+                            </strong>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="text-align: center;" colspan="7"> <strong>Schooling Details
+                            </strong></td>
+                        </tr>
+
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>Degree/Course</b>
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.75rem;
+                        
+                      ">
+                            <b>Grade /CGPA /Percentage(%)</b>
+                          </td>
+                          <td style="
+                  border: 1px solid black;
+                  padding: 0.4rem 0.75rem;
+                  
+                ">
+                            <b>Duration</b>
+                          </td>
+                          <td style="
+            border: 1px solid black;
+            padding: 0.4rem 0.75rem;
+            
+          ">
+                            <b>Year of Passing</b>
+                          </td>
+                          <td style="
+                            border: 1px solid black; padding: 0.4rem 0.3rem; 
+                          ">
+                            <b>Subject(s)</b>
+                          </td>
+
+
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>Name of School/College</b>
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>Name of Board/University</b>
+                          </td>
+
+                        </tr>
+
+                        <tr [ngClass]="{'fontSizeClass' : condition}" *ngFor="
+                      let details of finaldata.educationalqualifications
+                        .schoolingdetails
+                    ">
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.examination }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.marks }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.duration }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.yearofpassing }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.mainsubjects }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.nameofschool }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.nameofboard }}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!--UG-->
+                <div style="width: 100%;">
+                  <div style="margin-top: 20px;">
+                  </div>
+                  <div *ngIf="finaldata.educationalqualifications.undergraduationdetails.length!=0"
+                    style="page-break-inside: avoid;width: 100%; " class="col-md-12">
+                    <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                      <tbody>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                background-color: #0069c4;
+                                color: #fff;
+                                
+                              " colspan="8">
+                            <strong>Educational Qualification(s) Registered during the OTR (One Time Registration)
+                            </strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center;" colspan="7"> <strong>Graduation Details
+                            </strong></td>
+                        </tr>
+
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>Degree/Course</b>
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.75rem;
+                        
+                      ">
+                            <b>Grade /CGPA /Percentage(%)</b>
+                          </td>
+                          <td style="
+                  border: 1px solid black;
+                  padding: 0.4rem 0.75rem;
+                  
+                ">
+                            <b>Duration</b>
+                          </td>
+                          <td style="
+            border: 1px solid black;
+            padding: 0.4rem 0.75rem;
+            
+          ">
+                            <b>Year of Passing</b>
+                          </td>
+                          <td style="
+                            border: 1px solid black; padding: 0.4rem 0.3rem; 
+                          ">
+                            <b>Subject(s)</b>
+                          </td>
+
+
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>Name of School/College</b>
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>Name of Board/University</b>
+                          </td>
+
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}" *ngFor="
+                        let details of finaldata.educationalqualifications
+                          .undergraduationdetails
+                      ">
+                          <td style="
+                      border: 1px solid black;
+                      padding: 0.4rem 0.3rem;
+                      
+                    ">
+                            {{ details.examination }}
+                          </td>
+                          <td style="
+                      border: 1px solid black;
+                      padding: 0.4rem 0.3rem;
+                      
+                    ">
+                            {{ details.marks }}
+                          </td>
+                          <td style="
+                      border: 1px solid black;
+                      padding: 0.4rem 0.3rem;
+                      
+                    ">
+                            {{ details.duration }}
+                          </td>
+                          <td style="
+                      border: 1px solid black;
+                      padding: 0.4rem 0.3rem;
+                      
+                    ">
+                            {{ details.yearofpassing }}
+                          </td>
+                          <td style="
+                      border: 1px solid black;
+                      padding: 0.4rem 0.3rem;
+                      
+                    ">
+                            {{ details.mainsubjects }}
+                          </td>
+                          <td style="
+                      border: 1px solid black;
+                      padding: 0.4rem 0.3rem;
+                      
+                    ">
+                            {{ details.nameofschool }}
+                          </td>
+                          <td style="
+                      border: 1px solid black;
+                      padding: 0.4rem 0.3rem;
+                      
+                    ">
+                            {{ details.nameofboard }}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!--PG-->
+                <div style="width: 100%;">
+                  <div style="margin-top: 20px;">
+                  </div>
+                  <div *ngIf="finaldata.educationalqualifications.postgraduation.length!=0" class="col-md-12"
+                    style="margin-top: 15px; width: 100%; page-break-inside: avoid;">
+                    <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                      <tbody>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                  border: 1px solid black;
+                                  padding: 0.4rem 0.75rem;
+                                  background-color: #0069c4;
+                                  color: #fff;
+                                  
+                                " colspan="8">
+                            <strong>Educational Qualification(s) Registered during the OTR (One Time Registration)
+                            </strong>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="text-align: center;" colspan="7"> <strong>Post Graduation Details
+                            </strong></td>
+                        </tr>
+
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>Degree/Course</b>
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.75rem;
+                        
+                      ">
+                            <b>Grade /CGPA /Percentage(%)</b>
+                          </td>
+                          <td style="
+                  border: 1px solid black;
+                  padding: 0.4rem 0.75rem;
+                  
+                ">
+                            <b>Duration</b>
+                          </td>
+                          <td style="
+            border: 1px solid black;
+            padding: 0.4rem 0.75rem;
+            
+          ">
+                            <b>Year of Passing</b>
+                          </td>
+                          <td style="
+                            border: 1px solid black; padding: 0.4rem 0.3rem; 
+                          ">
+                            <b>Subject(s)</b>
+                          </td>
+
+
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>Name of School/College</b>
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>Name of Board/University</b>
+                          </td>
+
+                        </tr>
+
+                        <tr [ngClass]="{'fontSizeClass' : condition}" *ngFor="
+                          let details of finaldata.educationalqualifications
+                            .postgraduation
+                        ">
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.examination }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.marks }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.duration }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.yearofpassing }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.mainsubjects }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.nameofschool }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.nameofboard }}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!--Other Qualification-->
+                <div style="width: 100%;">
+                  <div style="margin-top: 20px;">
+                  </div>
+                  <div *ngIf="finaldata.educationalqualifications.otherqualification.length!=0" class="col-md-12"
+                    style="margin-top: 15px ;page-break-inside: avoid; width: 100%;">
+                    <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                      <tbody>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                  border: 1px solid black;
+                                  padding: 0.4rem 0.75rem;
+                                  background-color: #0069c4;
+                                  color: #fff;
+                                  
+                                " colspan="8">
+                            <strong>Educational Qualification(s) Registered during the OTR (One Time Registration)
+                            </strong>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="text-align: center;" colspan="7"> <strong>Other Qualification Details
+                            </strong></td>
+                        </tr>
+
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                  border: 1px solid black;
+                                  padding: 0.4rem 0.75rem;
+                                  
+                                ">
+                            <b>Degree/ Course Name</b>
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.75rem;
+                        
+                      ">
+                            <b>Duration</b>
+                          </td>
+                          <td style="
+                                border: 1px solid black; padding: 0.4rem 0.3rem; 
+                              ">
+                            <b>Description</b>
+                          </td>
+
+                          <td style="
+                                  border: 1px solid black;
+                                  padding: 0.4rem 0.75rem;
+                                  
+                                ">
+                            <b>Name of School/College</b>
+                          </td>
+                        </tr>
+
+
+                        <tr [ngClass]="{'fontSizeClass' : condition}" *ngFor="
+                          let details of finaldata.educationalqualifications
+                            .otherqualification
+                        ">
+                          <td style="
+                            border: 1px solid black;
+                            padding: 0.4rem 0.3rem;
+                            
+                          ">
+                            {{ details.name }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.duration }}
+                          </td>
+                          <td style="
+                            border: 1px solid black;
+                            padding: 0.4rem 0.3rem;
+                            
+                          ">
+                            {{ details.description }}
+                          </td>
+
+
+                          <td style="
+                            border: 1px solid black;
+                            padding: 0.4rem 0.3rem;
+                            
+                          ">
+                            {{ details.nameofschoolandcollege }}
+                          </td>
+
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!--OTR Research-->
+                <div style="width: 100%;">
+                  <div style="margin-top: 20px;">
+                  </div>
+                  <div *ngIf="finaldata.educationalqualifications.researchpapers.length !=0" class="col-md-12"
+                    style="margin-top: 15px; page-break-inside: avoid; width: 100%;">
+                    <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                      <tbody>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              background-color: #0069c4;
+                              color: #fff;
+                              
+                            " colspan="6" class="header-title bg-green">
+                            <strong>Educational Qualification(s) Registered during the OTR (One Time Registration)
+                            </strong>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="text-align: center;" colspan="7"> <strong>Research Papers/Review Articles/
+                              Conference Proceedings
+                            </strong></td>
+                        </tr>
+
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            " width="200px">
+                            <b>Publication Type</b>
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>Title of the Paper</b>
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>Journal Name/Page Number (s)</b>
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>ISSN/ISBN No.</b>
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            " width="100px">
+                            <b>Author</b>
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            " width="70px">
+                            <b>Year</b>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}" *ngFor="
+                      let details of finaldata.educationalqualifications
+                        .researchpapers
+                    ">
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.publicationtype }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.titleofpaper }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.journalname }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.issn }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.author }}
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.3rem;
+                        
+                      ">
+                            {{ details.year }}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!--Work  Details for Post-->
+                <div style="width: 100%;">
+                  <div style="margin-top: 20px;">
+                  </div>
+
+                  <div *ngIf=" finaldata.applypost.workexperiences.length!=0"
+                    style=" page-break-inside: avoid;margin-top: 15px; width: 100%;" class="col-md-12">
+                    <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                      <tbody>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      background-color: #0069c4;
+                                      color: #fff;
+                                      
+                                    " colspan="8" class="header-title bg-green">
+                            <strong>Employment/ Work Experience Prescribed/ Desirable for the Post</strong>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <!-- <td style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      
+                                      width: 37px;
+                                    ">
+                          <b>Sl.No</b>
+                        </td> -->
+                          <td style="border: 1px solid black; padding: .4rem .3rem;width:300px; --ShowExpType--">
+                            <b>Experience Type</b>
+                          </td>
+                          <td style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      
+                                    ">
+                            <b>Name and Address of the Employer</b>
+                          </td>
+                          <td style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      
+                                    ">
+                            <b>Post Held</b>
+                          </td>
+                          <td style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      
+                                    ">
+                            <b>Nature of Work/Duty</b>
+                          </td>
+                          <td style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      
+                                      width: 100px;
+                                    ">
+                            <b>Start Date</b>
+                          </td>
+                          <td style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      
+                                      width: 100px;
+                                    ">
+                            <b>End Date</b>
+                          </td>
+                          <td style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      
+                                      width: 110px;
+                                    ">
+                            <b>Sector</b>
+                          </td>
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.75rem;
+                        
+                        width: 110px;
+                      ">
+                            <b>Experience Certificate</b>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}"
+                          *ngFor="let items of finaldata.applypost.workexperiences let i = index">
+                          <!-- <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.75rem;
+                                    
+                                  ">
+                          <b>{{ i+1 }}</b>
+                        </td> -->
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.75rem;
+                                    
+                                  ">
+                            {{ items.experiencetype}}
+                          </td>
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.75rem;
+                                    
+                                  ">
+                            {{ items.nameofemployer}}
+                          </td>
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.75rem;
+                                    
+                                  ">
+                            {{ items.postheld}}
+                          </td>
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.75rem;
+                                    
+                                  ">
+                            {{ items.naturofwork}}
+                          </td>
+                          <td style="
+                                              border: 1px solid black;
+                                              padding: 0.4rem 0.75rem;
+                                              
+                                            ">
+                            {{ items.startdata.split('-').reverse().join('-')}}
+                          </td>
+                          <td style="
+                                                        border: 1px solid black;
+                                                        padding: 0.4rem 0.75rem;
+                                                        
+                                                      ">
+                            {{ items.enddate.split('-').reverse().join('-')}}
+                          </td>
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.75rem;
+                                    
+                                  ">
+                            {{ items.typeoforganization}}
+                          </td>
+                          <td style="
+                                    border: 1px solid black;
+                                    padding: 0.4rem 0.75rem;
+                                    
+                                  ">
+                            Uploaded
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!--OTR Work-->
+                <div style="width: 100%;">
+                  <div style="margin-top: 20px;">
+                  </div>
+
+                  <div *ngIf="finaldata.profileworkexperience.workexperience.length!=0" class="col-md-12"
+                    style="margin-top: 15px; page-break-inside: avoid; width: 100%;">
+                    <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                      <tbody>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              background-color: #0069c4;
+                              color: #fff;
+                              
+                            " colspan="6" class="header-title bg-green">
+                            <strong>Employment/ Work Experience Registered during OTR (One Time Registration)
+                            </strong>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <!-- <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                              width: 37px;
+                            ">
+                          <b>Sl.No</b>
+                        </td> -->
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>Name of the Employer</b>
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>Post Held</b>
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            <b>Nature of Work/Duty</b>
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                              width: 100px;
+                            ">
+                            <b>Start Date</b>
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                              width: 100px;
+                            ">
+                            <b>End Date</b>
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                              width: 110px;
+                            ">
+                            <b>Type of Organization</b>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}"
+                          *ngFor="let items of finaldata.profileworkexperience.workexperience;  let i = index">
+                          <!-- <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                          <b>{{ i + 1}}</b>
+                        </td> -->
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            {{ items.nameofemployer}}
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            {{ items.postheld}}
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            {{ items.naturofwork}}
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            {{ items.startdata.split('-').reverse().join('-')}}
+                          </td>
+                          <td style="
+                              border: 1px solid black;
+                              padding: 0.4rem 0.75rem;
+                              
+                            ">
+                            {{ items.enddate.split('-').reverse().join('-')}}
+                          </td>
+                          <td style="
+                      border: 1px solid black;
+                      padding: 0.4rem 0.75rem;
+                      
+                    ">
+                            {{ items.typeoforganization}}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!--Document for Post-->
+                <div style="width: 100%;">
+
+                  <div style="margin-top: 20px;">
+                  </div>
+                  <div class="col-md-12" style="page-break-inside: avoid; width: 100%;">
+                    <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                      <tbody>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                background-color: #0069c4;
+                                color: #fff;
+                                
+                              " colspan="6" class="header-title bg-green">
+                            <strong>Documents uploaded</strong>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td colspan="6" style="
+                                padding: 5px 10px;
+                                background: #f1efd2;
+                                border: 1px dashed;
+                                color: #bc870f;
+                                font-weight: 600;
+                                
+                              ">
+                            Documents will be verified at later stages.
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              " width="37px">
+                            <b>Sl.No</b>
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            <b>Certificate Type</b>
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              " width="150px">
+                            <b>Certificate No</b>
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              " width="100px">
+                            <b>Issue Date</b>
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              " width="150px">
+                            <b>Issuing Authority</b>
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              " width="100px">
+                            <b>Upload Status</b>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}"
+                          *ngFor="let items of finaldata.applypost.documentupload let i = index">
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            <b>{{ i+1 }}</b>
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            {{ items.certificatetype }}
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            {{ items.certificatename }}
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            {{ items.issuedate.split('-').reverse().join('-')}}
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            {{ items.issueauthority}}
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            Uploaded
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!--OTR Document-->
+                <div style="width: 100%;">
+                  <div style="margin-top: 20px;">
+                  </div>
+
+
+                  <div class="col-md-12" style="margin-top: 15px; page-break-inside: avoid; width: 100%;">
+                    <table style="width: 100%;" cellspacing="0" class="table table-bordered">
+                      <tbody>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                background-color: #0069c4;
+                                color: #fff;
+                                
+                              " colspan="6" class="header-title bg-green">
+                            <strong>Documents Uploaded During OTR (One Time Registration)
+                            </strong>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td colspan="6" style="
+                                padding: 5px 10px;
+                                background: #f1efd2;
+                                border: 1px dashed;
+                                color: #bc870f;
+                                font-weight: 600;
+                                
+                              ">
+                            Documents will be verified at later stages.
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              " width="7%">
+                            <b>Sl.No</b>
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              " width="34%">
+                            <b>Certificate Type</b>
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              " width="17%">
+                            <b>Certificate No</b>
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              " width="12%">
+                            <b>Issue Date</b>
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              " width="20%">
+                            <b>Issuing Authority</b>
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              " width="10%">
+                            <b>Upload Status</b>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}"
+                          *ngFor="let items of finaldata.otrdocuments.details;  let i = index">
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            <b>{{ i + 1}}</b>
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            {{ items.documenttype}}
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            {{ items.certificateno}}
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            {{ items.issuedate.split('-').reverse().join('-')}}
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            {{ items.issueauthority}}
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            Uploaded
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!--Payment for MVI-->
+                <div style="width: 100%;">
+                  <div style="margin-top: 20px;">
+                  </div>
+                  <div *ngIf="booleanforoldpaymentdetailsformvc" class="col-md-12"
+                    style="margin-top: 15px ; page-break-inside: avoid; width: 100%;">
+                    <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                      <thead>
+                        <tr [ngClass]="{'fontSizeClass' : condition}" style="background-color: #0069c4; color: #fff">
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              " colspan="8">
+                            <strong>Payment Details of Application submitted vide Advt No. 09/2020</strong>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      
+                                    ">
+                            <b> Have you applied for the post of Motor Vehicle Inspector vide Advt. No. 09/2020
+                              published
+                              on 13th Oct.2020?</b>
+                          </td>
+                          <td style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      
+                                    ">
+                            <div
+                              *ngIf=" finaldata.oldpaymentdetails.booleanforoldpayment==1; else elseblockforoldpaymentdetails">
+                              Yes
+                            </div>
+                            <ng-template #elseblockforoldpaymentdetails>
+                              <div>
+                                No
+                              </div>
+                            </ng-template>
+
+
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}"
+                          *ngIf=" finaldata.oldpaymentdetails.booleanforoldpayment==1;">
+                          <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                            <b>GRN Number</b>
+                          </td>
+                          <td style="
+                                        border: 1px solid black;
+                                        padding: 0.4rem 0.75rem;
+                                        
+                                      ">
+                            {{ finaldata.oldpaymentdetails.oldGRNnumber }}
+
+                          </td>
+                        </tr>
+
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+
+                <!--Payment Details-->
+                <div style="width: 100%;">
+                  <div style="margin-top: 20px;">
+                  </div>
+
+                  <div class="col-md-12" style="margin-top: 15px; page-break-inside: avoid; width: 100%;">
+                    <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                      <thead>
+                        <tr [ngClass]="{'fontSizeClass' : condition}" style="background-color: #0069c4; color: #fff">
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              " colspan="8">
+                            <strong>Payment Details</strong>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <th style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                width: 25%;
+                                
+                              ">
+                            Payment Date
+                          </th>
+                          <th style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            Reference No
+                          </th>
+                          <th style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            GRN No
+                          </th>
+                          <th style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            Amount (₹)
+                          </th>
+                          <th style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            Status
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            {{ paymentresult.paymentDate }}
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            {{ paymentresult.refNo }}
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            {{ paymentresult.grnno }}
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            {{ paymentresult.amount }}
+                          </td>
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              ">
+                            {{ paymentresult.status }}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Relavent Details-->
+                <div style="width: 100%;">
+
+                  <div style="margin-top: 20px;">
+                  </div>
+                  <div class="col-md-12" style="margin-top: 15px; page-break-inside: avoid; width: 100%;">
+                    <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                      <tbody>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      background-color: #0069c4;
+                                      color: #fff;
+                                      
+                                    " colspan="4" class="header-title bg-green">
+                            <strong>Additional Details</strong>
+                          </td>
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      
+                                    " colspan="3">
+                            <b>Are you a permanent resident of Assam</b>
+                          </td>
+                          <td style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      
+                                    " colspan="1">
+                            {{
+                            finaldata.personaldetails.permanent_resident_of_assam}}
+                          </td>
+
+                        </tr>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                        border: 1px solid black;
+                        padding: 0.4rem 0.75rem;
+                        
+                      " colspan="3">
+                            <b>Examination Zone</b>
+                          </td>
+                          <td style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      
+                                    " colspan="1">
+                            {{ finaldata.applypost.personaldetails.examinationzone}}
+                          </td>
+                        </tr>
+
+
+                        <tr [ngClass]="{'fontSizeClass' : condition}"
+                          *ngFor="let items of finaldata.applypost.dynamicoptionsarray" style="width: 100%;">
+                          <td colspan="3" style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      
+                                    ">
+                            <b>{{ items.question }}</b>
+                          </td>
+                          <td colspan="1" style="
+                                      border: 1px solid black;
+                                      padding: 0.4rem 0.75rem;
+                                      
+                                    ">
+                            {{ items.answer }}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!--Decleration-->
+                <div style="width: 100%;">
+                  <div style="margin-top: 20px;">
+                  </div>
+                  <div class="col-md-12"
+                    style="margin-top: 15px; page-break-inside: avoid;  width: 100%; margin-bottom: 5px">
+                    <table style="width: 100%" cellspacing="0" class="table table-bordered">
+                      <thead>
+                        <tr [ngClass]="{'fontSizeClass' : condition}" style="background-color: #0069c4; color: #fff">
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                
+                              " colspan="8">
+                            <strong>Declaration</strong>
+                          </td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr [ngClass]="{'fontSizeClass' : condition}">
+                          <td style="
+                                border: 1px solid black;
+                                padding: 0.4rem 0.75rem;
+                                font-size: 14px;
+                              " colspan="8" class="modal-body">
+                            <p [ngClass]="{'fontSizeClass' : condition}" style="text-align: justify">
+                              I, <strong>{{ finaldata.personaldetails.full_name}}</strong>
+                              hereby declare
+                              that all the statements made in this
+                              application are true, complete and correct
+                              to the best of my knowledge and belief.
+                            </p>
+
+                            <p [ngClass]="{'fontSizeClass' : condition}" style="
+                                  
+                                  margin: 5px 5px 15px 20px;
+                                  line-height: 18px;
+                                ">
+                              <img src="/assets/currency-circle.png" style="
+                                    position: relative;
+                                    top: -2px;
+                                    height: 7px;
+                                    margin-right: 5px;
+                                    background: #000;
+                                  " />
+                              In the event of any information being found
+                              false, incorrect on any facts are hidden by
+                              me or ineligibility being detected before or
+                              after the examination, action can be taken
+                              against me by the Commission as may be
+                              deemed fit.
+                            </p>
+
+
+                            <p [ngClass]="{'fontSizeClass' : condition}" style="
+                                  
+                            margin: 5px 5px 15px 20px;
+                            line-height: 18px;
+                          ">
+                        <img src="/assets/currency-circle.png" style="
+                              position: relative;
+                              top: -2px;
+                              height: 7px;
+                              margin-right: 5px;
+                              background: #000;
+                            " />
+                        No amendment/change of documents, once uploaded, shall be permitted subsequently.
+                      </p>
+
+
+                            <p [ngClass]="{'fontSizeClass' : condition}" style="
+                                  
+                                  margin: 5px 5px 15px 20px;
+                                  line-height: 18px;
+                                ">
+                              <img src="/assets/currency-circle.png" style="
+                                    position: relative;
+                                    top: -2px;
+                                    height: 7px;
+                                    margin-right: 5px;
+                                    background: #000;
+                                  " />
+                              I have read the terms and conditions of the
+                              Commission as published in the advertisement
+                              carefully and I do hereby undertake to abide
+                              by them.
+                            </p>
+                            <p [ngClass]="{'fontSizeClass' : condition}" style="
+                                  
+                                  margin: 5px 5px 15px 20px;
+                                  line-height: 18px;
+                                ">
+                              <img src="/assets/currency-circle.png" style="
+                                    position: relative;
+                                    top: -2px;
+                                    height: 7px;
+                                    margin-right: 5px;
+                                    background: #000;
+                                  " />
+                              I further declare that I fulfil all the
+                              conditions of eligibility regarding Age
+                              limits, Educational Qualification, etc.
+                              prescribed for recruitment to the Post.
+                            </p>
+                            <p [ngClass]="{'fontSizeClass' : condition}" style="
+                                  
+                                  margin: 5px 5px 15px 20px;
+                                  line-height: 18px;
+                                ">
+                              <img src="/assets/currency-circle.png" style="
+                                    position: relative;
+                                    top: -2px;
+                                    height: 7px;
+                                    margin-right: 5px;
+                                    background: #000;
+                                  " />
+                              I certify that I have not been debarred by
+                              any examination conducting authority.
+                            </p>
+                            <p [ngClass]="{'fontSizeClass' : condition}" style="
+                                  
+                                  margin: 5px 5px 15px 20px;
+                                  line-height: 18px;
+                                ">
+                              <img src="/assets/currency-circle.png" style="
+                                    position: relative;
+                                    top: -2px;
+                                    height: 7px;
+                                    margin-right: 5px;
+                                    background: #000;
+                                  " />
+                              I understand that application once submitted
+                              cannot be alerted or changed in any format
+                              whatsoever and the submitted fee for the
+                              application will be not be refunded by
+                              Commission in any circumstances.
+                            </p>
+                            <p [ngClass]="{'fontSizeClass' : condition}" style="
+                                  
+                                  margin: 5px 5px 15px 20px;
+                                  line-height: 18px;
+                                ">
+                              <img src="/assets/currency-circle.png" style="
+                                    position: relative;
+                                    top: -2px;
+                                    height: 7px;
+                                    margin-right: 5px;
+                                    background: #000;
+                                  " />
+                              I further declare that I have carefully read
+                              the Assam Public Services (Application of
+                              Small Family Norms in Direct Recruitment)
+                              Rules, 2019 published vide No.
+                              ABP.69/2019/17 Dated Dispur, the 6th
+                              November, 2019 and I do hereby undertake to
+                              abide by them.
+                            </p>
+                            <p [ngClass]="{'fontSizeClass' : condition}" style="
+                                  
+                                  margin: 5px 5px 15px 20px;
+                                  line-height: 18px;
+                                ">
+                              <img src="assets/currency-circle.png" style="
+                                    position: relative;
+                                    top: -2px;
+                                    height: 7px;
+                                    margin-right: 5px;
+                                    background: #000;
+                                  " />
+                              I have informed my Head of office/Department
+                              in writing that I am applying for this post.
+                              *
+                            </p>
+
+                            <p [ngClass]="{'fontSizeClass' : condition}" style=" line-height: 18px">
+                              *Applicable for those who are already in
+                              Government service/similar organisations or
+                              government owned industrial undertakings
+                              whether in permanent or temporary capacity
+                              or as work charged employees other than
+                              casual or daily rated employees or those
+                              serving under public enterprises.
+                            </p>
+                            <p></p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
